@@ -9,4 +9,4 @@ temperatura_celsius = float(input("Qual a temperatura em celsius? "))
 fahrenheit = temperatura_celsius/(5/9)+32
 print(f"A temperatura {temperatura_celsius}° (celsius) corresponde a {fahrenheit} fahrenheit.")
 
-#Exercicio 3:
+#Exercicio 3: ''
