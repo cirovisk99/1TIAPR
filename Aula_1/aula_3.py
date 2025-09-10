@@ -35,7 +35,13 @@ def ano_bissexto(x):
 def vogal_consoante(x):
     letra = x.upper()
     
-    if letra in ('A','E','I','O','U'):
+    if len(letra) > 1 and letra[:1] in ('A','E','I','O','U'):
+        print('Primeira letra é Vogal')
+    
+    elif len(letra) > 1 and letra[:1] not in ('A','E','I','O','U'):
+        print('Primeira letra é Consoante')
+    
+    elif letra in ('A','E','I','O','U'):
         print('Vogal')
     else: 
         print('Consoante')
@@ -62,7 +68,6 @@ def idade_voto(x):
     else:
         print('Não pode votar')
         
-        
 def letra_numero(entrada):
     
     if entrada.isdigit() == True:
@@ -78,7 +83,6 @@ def letra_numero(entrada):
         print('É Letra')
         vogal_consoante(entrada)
         
-
-entrada = input('coloca qualquer coisa ai: ')
+entrada = input('Coloca qualquer coisa ai: ')
 letra_numero(entrada)
 
