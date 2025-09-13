@@ -59,7 +59,7 @@ def preco(x):
         print(f'O valor do pedido é de R${valor_total:.2f}')
         
 #EXERCICIO 6: VERIFICAR SE A PESSOA TEM MAIS DE 16 ANOS E PODE VOTAR.
-def idade_voto(x):
+def idade_voto(x): 
     
     idade = int(x)
     
