@@ -5,7 +5,7 @@ def transposta(matriz):
     matriz_transposta = []
     
     for i in range(len(matriz[0])): 
-        linha = []
+        linha = [] 
         for j in range(len(matriz)):
             linha.append(matriz[j][i])
         matriz_transposta.append(linha)

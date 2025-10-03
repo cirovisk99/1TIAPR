@@ -3,46 +3,114 @@
   "author": "Ciro Yamauchi",
   "editor": "wokwi",
   "parts": [
-    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-breadboard-half", "id": "bb2", "top": -147, "left": -170, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 76.8, "left": -14.36, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -109.2, "left": 71, "attrs": { "color": "red" } },
     {
       "type": "wokwi-led",
-      "id": "led1",
-      "top": -32.4,
-      "left": 176.6,
-      "attrs": { "color": "red" }
+      "id": "led2",
+      "top": -109.2,
+      "left": 90.2,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -109.2,
+      "left": 109.4,
+      "attrs": { "color": "green" }
     },
     {
       "type": "wokwi-resistor",
       "id": "r1",
-      "top": 51.95,
-      "left": 163.2,
+      "top": -33.6,
+      "left": 66.65,
+      "rotate": 90,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -33.6,
+      "left": 85.85,
+      "rotate": 90,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -33.6,
+      "left": 105.05,
+      "rotate": 90,
       "attrs": { "value": "200" }
     },
     {
       "type": "wokwi-pushbutton",
       "id": "btn1",
-      "top": 92.6,
-      "left": -124.8,
-      "attrs": { "color": "green", "xray": "1", "key": "b" }
+      "top": -58.2,
+      "left": -64.2,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1", "key": "d" }
     },
     {
       "type": "wokwi-pushbutton",
       "id": "btn2",
-      "top": 15.8,
-      "left": -124.8,
+      "top": -58.2,
+      "left": -112.2,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1", "key": "s" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": -58.2,
+      "left": -160.2,
+      "rotate": 90,
       "attrs": { "color": "green", "xray": "1", "key": "a" }
     }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
     [ "esp:RX", "$serialMonitor:TX", "", [] ],
-    [ "esp:GND.2", "led1:C", "black", [ "v0" ] ],
-    [ "r1:1", "esp:23", "green", [ "v0" ] ],
-    [ "r1:2", "led1:A", "green", [ "v0" ] ],
-    [ "btn2:1.r", "esp:32", "green", [ "h29", "v57.6" ] ],
-    [ "btn2:2.r", "esp:GND.1", "black", [ "h19.4", "v105.8" ] ],
-    [ "btn1:1.r", "esp:33", "green", [ "v0" ] ],
-    [ "btn1:2.r", "esp:GND.1", "black", [ "h19.4", "v29" ] ]
+    [ "bb2:29t.e", "bb2:29b.f", "green", [ "v0" ] ],
+    [ "bb2:27t.e", "bb2:27b.f", "green", [ "v0" ] ],
+    [ "bb2:25t.e", "bb2:25b.f", "green", [ "v0" ] ],
+    [ "bb2:27b.j", "bb2:bn.22", "green", [ "v0" ] ],
+    [ "bb2:29b.j", "bb2:bn.24", "green", [ "v0" ] ],
+    [ "bb2:26b.j", "esp:23", "green", [ "v0" ] ],
+    [ "bb2:28b.j", "esp:22", "green", [ "v0" ] ],
+    [ "bb2:30b.j", "esp:21", "green", [ "v0" ] ],
+    [ "bb2:25b.j", "bb2:bn.20", "green", [ "v0" ] ],
+    [ "led1:A", "bb2:26t.d", "", [ "$bb" ] ],
+    [ "led1:C", "bb2:25t.d", "", [ "$bb" ] ],
+    [ "led2:A", "bb2:28t.d", "", [ "$bb" ] ],
+    [ "led2:C", "bb2:27t.d", "", [ "$bb" ] ],
+    [ "led3:A", "bb2:30t.d", "", [ "$bb" ] ],
+    [ "led3:C", "bb2:29t.d", "", [ "$bb" ] ],
+    [ "r1:1", "bb2:26t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb2:26b.i", "", [ "$bb" ] ],
+    [ "r2:1", "bb2:28t.e", "", [ "$bb" ] ],
+    [ "r2:2", "bb2:28b.i", "", [ "$bb" ] ],
+    [ "r3:1", "bb2:30t.e", "", [ "$bb" ] ],
+    [ "r3:2", "bb2:30b.i", "", [ "$bb" ] ],
+    [ "btn3:1.l", "bb2:4t.d", "", [ "$bb" ] ],
+    [ "btn3:2.l", "bb2:2t.d", "", [ "$bb" ] ],
+    [ "btn3:1.r", "bb2:4b.i", "", [ "$bb" ] ],
+    [ "btn3:2.r", "bb2:2b.i", "", [ "$bb" ] ],
+    [ "btn1:1.l", "bb2:14t.d", "", [ "$bb" ] ],
+    [ "btn1:2.l", "bb2:12t.d", "", [ "$bb" ] ],
+    [ "btn1:1.r", "bb2:14b.i", "", [ "$bb" ] ],
+    [ "btn1:2.r", "bb2:12b.i", "", [ "$bb" ] ],
+    [ "btn2:1.l", "bb2:9t.d", "", [ "$bb" ] ],
+    [ "btn2:2.l", "bb2:7t.d", "", [ "$bb" ] ],
+    [ "btn2:1.r", "bb2:9b.i", "", [ "$bb" ] ],
+    [ "btn2:2.r", "bb2:7b.i", "", [ "$bb" ] ],
+    [ "bb2:2b.j", "bb2:bn.1", "green", [ "v38.4" ] ],
+    [ "bb2:7b.j", "bb2:bn.6", "green", [ "v0" ] ],
+    [ "bb2:12b.j", "bb2:bn.10", "green", [ "v0" ] ],
+    [ "bb2:14b.j", "esp:34", "green", [ "v0" ] ],
+    [ "bb2:9b.j", "esp:32", "green", [ "v0" ] ],
+    [ "bb2:4b.j", "esp:33", "green", [ "v163.2", "h105.45" ] ]
   ],
   "dependencies": {}
 }
